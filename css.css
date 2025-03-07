@@ -51,7 +51,7 @@ body {
 }
 
 .header-link {
-font-size: 1,5vw;
+font-size: 1.5vw;
   text-decoration: none;
   color: white; /* Белый цвет для ссылок */
   transition: color 0.3s ease;
