@@ -99,6 +99,8 @@ body {
 @media (max-width: 768px) {
   .main-content {
     flex-direction: column; /* Элементы размещаются в колонку при маленьком экране */
+ justify-content: center;
+    align-items: center;
   }
 
   .text-container {
@@ -107,7 +109,8 @@ body {
   }
 
   #rectangle1 {
-    width: 100%; /* Прямоугольник займет всю ширину экрана на маленьких экранах */
+    width: 80%; /* Прямоугольник займет всю ширину экрана на маленьких экранах */
+   height: 100vh;
     margin-top: 20px; /* Отступ сверху для прямоугольника */
   }
 }
@@ -116,7 +119,7 @@ body {
 @media (min-width: 769px) {
   .main-content {
     flex-direction: row; /* Элементы размещаются в строку на больших экранах */
-    align-items: flex-start; /* Выравнивание по верхнему краю */
+  
   }
 
   .text-container {
