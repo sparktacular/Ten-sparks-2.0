@@ -5,22 +5,20 @@
   box-sizing: border-box;
 }
 
+/* Хедер */
 header {
   font-family: 'Jaini', serif;
-  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
+  height: 20vh; /* Расстояние от хедера до блока */
 }
 
-/* Хедер */
+/* Хедер контейнер */
 .header-container {
   display: flex;
   align-items: center;
   padding: 16px;
   background-color: rgba(0, 0, 0, 0.8); /* Черный фон с небольшой прозрачностью */
-  height: 15%; /* Высота хедера */
+  height: 70%; /* Высота хедера */
   width: 100%; /* Хедер на всю ширину экрана */
-  
 }
 
 .left-section, .right-section {
@@ -60,4 +58,68 @@ header {
 
 .header-link:hover {
   color: #FF5AA4; /* Цвет при наведении */
+}
+
+/* Фон страницы */
+body {
+  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Jaini', serif;
+}
+
+/* Основной контент */
+.main-content {
+  display: flex;
+  gap: 16px; /* Отступ между прямоугольниками */
+  padding: 16px; /* Отступ от краев экрана */
+  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+}
+
+/* Прямоугольник */
+#rectangle1 {
+  width: 30vw; /* 30% ширины экрана */
+  height: 70vh; /* 70% высоты экрана */
+  background-color: #3498db; /* Цвет прямоугольника */
+}
+
+/* Контейнер для текста */
+.text-container {
+  width: calc(100% - 30vw - 16px - 6px); /* Ширина текста: 100% от ширины экрана минус 30% для прямоугольника, 16px отступ с левого края и 6px от правого края */
+  font-size: 16px; /* Размер шрифта */
+  color: #FFACD4; /* Цвет текста */
+  line-height: 1.5; /* Интерлиньяж для лучшего восприятия текста */
+  word-wrap: break-word; /* Разрешаем перенос слов на новую строку */
+  overflow-wrap: break-word; /* Тоже разрешает переносы длинных слов */
+  display: flex;
+  align-items: flex-start; /* Выравнивание текста по верхнему краю */
+  justify-content: flex-start; /* Выравнивание текста по левому краю */
+}
+
+/* Медиазапрос для экранов меньше 768px */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Элементы размещаются в колонку при маленьком экране */
+  }
+
+  .text-container {
+    width: 100%; /* Текст займет всю ширину экрана */
+    margin-top: 20px; /* Отступ сверху для текста */
+  }
+
+  #rectangle1 {
+    width: 100%; /* Прямоугольник займет всю ширину экрана на маленьких экранах */
+    margin-top: 20px; /* Отступ сверху для прямоугольника */
+  }
+}
+
+/* Медиазапрос для экранов больше 768px */
+@media (min-width: 769px) {
+  .main-content {
+    flex-direction: row; /* Элементы размещаются в строку на больших экранах */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+  }
+
+  .text-container {
+    margin-top: 0; /* Убираем отступ сверху */
+  }
 }
