@@ -1,0 +1,122 @@
+/* Сброс стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%202.jpg?raw=true') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Jaini', serif;
+  color: #FFACD4;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 5vw;
+  color: #FF5AA4;
+  text-align: center;
+}
+
+header {
+  height: 20vh;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 70%;
+  width: 100%;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.left-section {
+  justify-content: flex-start;
+}
+
+.right-section {
+  justify-content: flex-end;
+}
+
+.logo-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 15vw;
+  height: 20vh;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.header-link {
+  font-size: 1.5vw;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: #FF5AA4;
+}
+
+/* Основной контент */
+.main-content {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  flex-wrap: nowrap;
+}
+
+/* Ряд с изображениями */
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 3%; /* 🔧 Уменьшен отступ от краёв (было 64px 5%) */
+  gap: 3%; /* 🔧 Уменьшено расстояние между карточками (было 5%) */
+  flex-wrap: wrap;
+}
+
+.image-card {
+  flex: 1 1 31%; /* 🔧 Сделали карточки шире (было 28%) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.image-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.caption {
+  margin-top: 8px; /* 🔧 Уменьшен отступ между изображением и текстом (было 16px) */
+  max-width: 100%;
+  font-size: 16px;
+  color: #FFACD4;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.caption h2 {
+  font-size: 1.6rem; /* можно уменьшить заголовок, если хочется меньше */
+  margin-bottom: 4px; /* 🔧 уменьшено расстояние между заголовком и описанием */
+  color: #FF5AA4;
+}
