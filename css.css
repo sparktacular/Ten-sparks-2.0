@@ -5,26 +5,32 @@
   box-sizing: border-box;
 }
 
-/* Хедер */
-header {
+/* Основные стили */
+body {
+  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Jaini', serif;
-  height: 20vh; /* Расстояние от хедера до блока */
+  color: white;
 }
 
-/* Хедер контейнер */
+/* Хедер */
+header {
+  height: 20vh;
+}
+
 .header-container {
   display: flex;
   align-items: center;
   padding: 16px;
-  background-color: rgba(0, 0, 0, 0.8); /* Черный фон с небольшой прозрачностью */
-  height: 70%; /* Высота хедера */
-  width: 100%; /* Хедер на всю ширину экрана */
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 70%;
+  width: 100%;
 }
 
 .left-section, .right-section {
   display: flex;
   align-items: center;
-  gap: 16px; /* Расстояние между ссылками */
+  gap: 16px;
 }
 
 .left-section {
@@ -52,77 +58,41 @@ header {
 .header-link {
   font-size: 1.5vw;
   text-decoration: none;
-  color: white; /* Белый цвет для ссылок */
+  color: white;
   transition: color 0.3s ease;
 }
 
 .header-link:hover {
-  color: #FF5AA4; /* Цвет при наведении */
-}
-
-/* Фон страницы */
-body {
-  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'Jaini', serif;
+  color: #FF5AA4;
 }
 
 /* Основной контент */
 .main-content {
   display: flex;
-  gap: 16px; /* Отступ между прямоугольниками */
-  padding: 16px; /* Отступ от краев экрана */
-  flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+  gap: 16px;
+  padding: 16px;
+  flex-wrap: nowrap;
 }
 
 /* Прямоугольник */
 #rectangle1 {
-  width: 30vw; /* 30% ширины экрана */
-  height: 70vh; /* 70% высоты экрана */
-  background-color: #3498db; /* Цвет прямоугольника */
+  width: 30vw;
+  height: 70vh;
+  background-color: #3498db;
 }
 
-/* Контейнер для текста */
-.text-container {
-  width: calc(100% - 30vw - 16px - 6px); /* Ширина текста: 100% от ширины экрана минус 30% для прямоугольника, 16px отступ с левого края и 6px от правого края */
-  font-size: 16px; /* Размер шрифта */
-  color: #FFACD4; /* Цвет текста */
-  line-height: 1.5; /* Интерлиньяж для лучшего восприятия текста */
-  word-wrap: break-word; /* Разрешаем перенос слов на новую строку */
-  overflow-wrap: break-word; /* Тоже разрешает переносы длинных слов */
+/* Правая часть */
+.right-block {
   display: flex;
-  align-items: flex-start; /* Выравнивание текста по верхнему краю */
-  justify-content: flex-start; /* Выравнивание текста по левому краю */
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
 }
 
-/* Медиазапрос для экранов меньше 768px */
-@media (max-width: 768px) {
-  .main-content {
-    flex-direction: column; /* Элементы размещаются в колонку при маленьком экране */
- justify-content: center;
-    align-items: center;
-  }
-
-  .text-container {
-    width: 100%; /* Текст займет всю ширину экрана */
-    margin-top: 20px; /* Отступ сверху для текста */
-  }
-
-  #rectangle1 {
-    width: 80%; /* Прямоугольник займет всю ширину экрана на маленьких экранах */
-   height: 100vh;
-    margin-top: 20px; /* Отступ сверху для прямоугольника */
-  }
-}
-
-/* Медиазапрос для экранов больше 768px */
-@media (min-width: 769px) {
-  .main-content {
-    flex-direction: row; /* Элементы размещаются в строку на больших экранах */
-  
-  }
-
-  .text-container {
-    margin-top: 0; /* Убираем отступ сверху */
-  }
-}
+/* Текст */
+.text-container {
+  font-size: 16px;
+  color: #FFACD4;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break
