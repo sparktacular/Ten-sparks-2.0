@@ -4,14 +4,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+h1 {
+  color: #FF5AA4;
+}
 /* Основные стили */
 body {
   background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Jaini', serif;
   color: #FFACD4;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
+
 
 /* Хедер */
 header {
@@ -76,13 +81,16 @@ header {
 
 /* Прямоугольник */
 #rectangle1 {
-   max-height: 900px;
-   width: 35%;
-  height: 52,5%;
- 
-  object-fit: cover;
-  border-radius: 8px;
+  aspect-ratio: 2 / 3;             /* сохраняет нужную пропорцию */
+  width: 35%;                      /* адаптивная ширина */
+  max-width: 400px;
+  min-width: 200px;
   background-color: gray;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Правая часть */
@@ -98,4 +106,4 @@ header {
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
-  overflow-wrap: break
+  overflow-wrap: break}
