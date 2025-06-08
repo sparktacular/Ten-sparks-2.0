@@ -9,17 +9,19 @@
 </head>
 <body>
   <header>
-   <div class="header-container">
+    <div class="header-container">
       <div class="left-section">
         <a href="#" class="header-link">Homepage</a>
         <a href="#" class="header-link">Social Media</a>
         <a href="#" class="header-link">Pleides</a>
       </div>
+
       <div class="logo-container">
         <a href="#" id="logo-link">
-          <img src="https://github.com/sparktacular/Ten-sparks-2.0/blob/main/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B1%D0%B5%D0%BB%D0%B0%D1%8F.png?raw=true" alt="Logo" />
+          <img id="logo" src="https://github.com/sparktacular/Ten-sparks-2.0/blob/main/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B1%D0%B5%D0%BB%D0%B0%D1%8F.png?raw=true" alt="Logo">
         </a>
       </div>
+
       <div class="right-section">
         <a href="#" class="header-link">Lore</a>
         <a href="#" class="header-link">Read</a>
@@ -28,16 +30,17 @@
     </div>
   </header>
 
-  <!-- Первый блок -->
-  <section class="main-content">
+  <div class="main-content">
     <div class="rectangle" id="rectangle1"></div>
+
     <div class="right-block">
       <div class="text-container">
         <h1>Ten Sparks</h1>
         <p>
-          THIS TEXT WILL BE PLACED to the right of rectangle on big screens, and on small - under. pleeasee work right
+         THIS TEXT WILL BE PLACED to the right of rectangle on big screens, and on small - under. pleeasee work right
         </p>
       </div>
+
       <div class="tags">
         <p>Publishing house:</p>
         <p>Year of writing:</p>
@@ -47,10 +50,12 @@
         <p>Genre:</p>
       </div>
     </div>
+  </div>
+</body>
   </section>
 
   <!-- Второй блок -->
-  <h1>Appearance of the world</h1>
+<h1 style="text-align: center; margin: 20px 0;">Appearance of the world</h1>
   <main class="image-row">
     <div class="image-card">
       <img src="https://via.placeholder.com/400x600?text=Map" alt="Explore the map">
@@ -82,120 +87,120 @@ Will you follow it?</p>
 
 
 
- margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  color: #FF5AA4;
+}
+/* Основные стили */
+body {
+  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Jaini', serif;
+  color: #FFACD4;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-    body {
-      background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Jaini', serif;
-      color: #FFACD4;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
 
-    header {
-      height: 20vh;
-    }
+/* Хедер */
+header {
+  height: 20vh;
+}
 
-    .header-container {
-      display: flex;
-      align-items: center;
-      padding: 16px;
-      background-color: rgba(0, 0, 0, 0.8);
-      height: 70%;
-      width: 100%;
-    }
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 70%;
+  width: 100%;
+}
 
-    .left-section, .right-section {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
-    .left-section {
-      justify-content: flex-start;
-    }
+.left-section {
+  justify-content: flex-start;
+}
 
-    .right-section {
-      justify-content: flex-end;
-    }
+.right-section {
+  justify-content: flex-end;
+}
 
-    .logo-container {
-      flex-grow: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.logo-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .logo-container img {
-      width: 15vw;
-      height: 20vh;
-      object-fit: contain;
-      cursor: pointer;
-    }
+.logo-container img {
+  width: 15vw;
+  height: 20vh;
+  object-fit: contain;
+  cursor: pointer;
+}
 
-    .header-link {
-      font-size: 1.5vw;
-      text-decoration: none;
-      color: white;
-      transition: color 0.3s ease;
-    }
+.header-link {
+  font-size: 1.8vw;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
 
-    .header-link:hover {
-      color: #FF5AA4;
-    }
+.header-link:hover {
+  color: #FF5AA4;
+}
 
-    h1 {
-      font-size: 5vw;
-      color: #FF5AA4;
-      text-align: center;
-    }
+/* Основной контент */
+.main-content {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  flex-wrap: nowrap;
+}
 
-    .main-content {
-      display: flex;
-      gap: 16px;
-      padding: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+/* Прямоугольник */
+#rectangle1 {
+  aspect-ratio: 2 / 3;             /* сохраняет нужную пропорцию */
+  width: 35%;                      /* адаптивная ширина */
+  max-width: 400px;
+  min-width: 200px;
+  background-color: gray;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-    /* Первый блок: Прямоугольник + текст */
-    #rectangle1 {
-      aspect-ratio: 2 / 3;
-      width: 35%;
-      max-width: 400px;
-      min-width: 200px;
-      background-color: gray;
-      border-radius: 8px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+/* Правая часть */
+.right-block {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 16px;
+}
 
-    .right-block {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      gap: 16px;
-      max-width: 600px;
-    }
-
-    .text-container {
-      font-size: 16px;
-      line-height: 1.5;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-    }
+/* Текст */
+.text-container {
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break}
 
     .tags p {
       margin-bottom: 8px;
     }
 
-    /* Второй блок: изображения */
+    /* при большом разрешении фотографии в три кололнки */
     .image-row {
       display: flex;
       justify-content: space-between;
@@ -220,16 +225,28 @@ Will you follow it?</p>
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
     }
 
-    .caption {
-      margin-top: 8px;
-      max-width: 100%;
-      font-size: 16px;
-      color: #FFACD4;
-      white-space: pre-wrap;
-    }
+  .caption h2 {
+  margin: 6px 0 0 0;
+  font-size: 18px;
+  color: #FF5AA4;
+}
 
-    .caption h2 {
-      font-size: 1.6rem;
-      margin-bottom: 4px;
-      color: #FF5AA4;
-    }
+.caption p {
+  margin: 8px 0 0 0;
+}
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-card {
+    width: 90%; /* или 100%, если хотите на всю ширину */
+    margin-bottom: 24px;
+  }
+
+  .image-card img {
+    width: 100%;
+  }
+}
+    
