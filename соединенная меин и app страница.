@@ -37,7 +37,7 @@
       <div class="text-container">
         <h1>Ten Sparks</h1>
         <p>
-         THIS TEXT WILL BE PLACED to the right of rectangle on big screens, and on small - under. pleeasee work right
+         THIS TEXT WILL BE PLACED to the right of rectangle on big screens, and on small - under. pleeasee work right gjghhfjg fghfjgjhk gjioovr sosjdfo fjgjfgjf aakdeiwc jdnc jdjjd
         </p>
       </div>
 
@@ -53,8 +53,6 @@
   </div>
 </body>
   </section>
-
-  <!-- Второй блок -->
 <h1 style="text-align: center; margin: 20px 0;">Appearance of the world</h1>
   <main class="image-row">
     <div class="image-card">
@@ -81,11 +79,11 @@ Follow the trail of stardust?</p>
 Will you follow it?</p>
       </div>
     </div>
+    <!-- эт просто пусой блок чтобы можно было любоваться елочками -->
+    <div style="height: 120px;"></div> 
   </main>
 </body>
 </html>
-
-
 
 * {
   margin: 0;
@@ -104,7 +102,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
-
 
 /* Хедер */
 header {
@@ -169,8 +166,8 @@ header {
 
 /* Прямоугольник */
 #rectangle1 {
-  aspect-ratio: 2 / 3;             /* сохраняет нужную пропорцию */
-  width: 35%;                      /* адаптивная ширина */
+  aspect-ratio: 2 / 3;
+  width: 35%;
   max-width: 400px;
   min-width: 200px;
   background-color: gray;
@@ -194,46 +191,49 @@ header {
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
-  overflow-wrap: break}
+  overflow-wrap: break-word;
+}
 
-    .tags p {
-      margin-bottom: 8px;
-    }
+.tags p {
+  margin-bottom: 8px;
+}
 
-    /* при большом разрешении фотографии в три кололнки */
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 32px 3%;
-      gap: 3%;
-      flex-wrap: wrap;
-    }
+/* === Блок изображений === */
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 3%;
+  gap: 3%;
+  flex-wrap: wrap;
+}
 
-    .image-card {
-      flex: 1 1 31%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+.image-card {
+  flex: 1 1 31%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-    .image-card img {
-      width: 100%;
-      aspect-ratio: 2 / 3;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-    }
+.image-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
 
-  .caption h2 {
+.caption h2 {
   margin: 6px 0 0 0;
   font-size: 18px;
   color: #FF5AA4;
 }
 
 .caption p {
-  margin: 8px 0 0 0;
+  margin: 4px 0 0 0;
 }
+
+/* 📱 Только на телефонах — карточки по одной */
 @media (max-width: 768px) {
   .image-row {
     flex-direction: column;
@@ -241,7 +241,7 @@ header {
   }
 
   .image-card {
-    width: 90%; /* или 100%, если хотите на всю ширину */
+    width: 80%;
     margin-bottom: 24px;
   }
 
@@ -249,4 +249,3 @@ header {
     width: 100%;
   }
 }
-    
