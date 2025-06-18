@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Characters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="left-section">
+        <a href="#" class="header-link">Homepage</a>
+        <a href="#" class="header-link">Social Media</a>
+        <a href="#" class="header-link">Pleides</a>
+      </div>
+      <div class="logo-container">
+        <a href="#" id="logo-link">
+          <img id="logo" src="https://github.com/sparktacular/Ten-sparks-2.0/blob/main/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B1%D0%B5%D0%BB%D0%B0%D1%8F.png?raw=true" alt="Logo">
+        </a>
+      </div>
+      <div class="right-section">
+        <a href="#" class="header-link">Lore</a>
+        <a href="#" class="header-link">Read</a>
+        <a href="#" class="header-link">About Book</a>
+      </div>
+    </div>
+  </header>
+  <div class="main-content">
+      </div>
+    </div>
+  </div>
+</body>
+  </section>
+<h1 style="text-align: center; margin: 10px 0 12px 0;">Characters</h1>
+  <main class="image-row">
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x600?text=Map" alt="Kane">
+      <div class="caption">
+        <h2>Kane</h2>
+      </div>
+    </div>
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x600?text=Lore" alt="Elfis">
+      <div class="caption">
+        <h2>Elfis</h2>
+      </div>
+    </div>
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x600?text=Forest" alt="Rey">
+      <div class="caption">
+        <h2>Rey</h2>
+      </div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Kris">
+    <div class="caption">
+       <h2>Kris</h2>
+</div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Alice">
+    <div class="caption">
+       <h2>Alice</h2>
+</div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Mak">
+    <div class="caption">
+       <h2>Mak</h2>
+</div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Filip">
+    <div class="caption">
+       <h2>Filip</h2>
+</div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Hunter">
+    <div class="caption">
+       <h2>Hunter</h2>
+</div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Acs">
+    <div class="caption">
+       <h2>Acs</h2>
+</div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Ary">
+    <div class="caption">
+       <h2>Ary</h2>
+    </div>
+    </div>
+    <div class="image-card"> 
+    <img src="https://via.placeholder.com/400x600?text=Lore" alt="Elter">
+    <div class="caption">
+       <h2>Elter</h2
+       </div>
+    </div>
+    </div>
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x600?text=Map" alt="Valentine">
+      <div class="caption">
+        <h2>Valentine</h2>
+      </div>
+    </div>
+    <!-- эт просто пустой блок чтобы можно было любоваться елочками -->
+    <div style="height: 120px;"></div> 
+  </main>
+</body>
+</html>
+
+
+* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+h1 {
+  color: #FF5AA4; }
+body {
+  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%203.jpg?raw=true') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Jaini', serif;
+  color: #FFACD4;
+  min-height: 100vh;
+  overflow-x: hidden; }
+header {
+  height: 20vh; }
+.header-container {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 70%;
+  width: 100%; }
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+  gap: 16px; }
+.left-section {
+  justify-content: flex-start; }
+.right-section {
+  justify-content: flex-end; }
+.logo-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+.logo-container img {
+  width: 15vw;
+  height: 20vh;
+  object-fit: contain;
+  cursor: pointer;}
+.header-link {
+  font-size: 1.8vw;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease; }
+.header-link:hover {
+  color: #FF5AA4; }
+.main-content {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  flex-wrap: nowrap; }
+.text-container {
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word; }
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+  gap: 32px;
+  padding: 32px 3%;
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.image-card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.caption h2 {
+  margin: 6px 0 0 0;
+  font-size: 18px;
+  color: #FFACD4;
+}
+
+@media (max-width: 540px) {
+  .image-row {
+    grid-template-columns: 1fr; /* на планшетах и ниже – по одному */
+    justify-items: center;
+  }
+
+  .image-card {
+    width: 80%;
+    margin-bottom: 24px;
+  }
+
+  .image-card img {
+    width: 90%;
+  }
+}
