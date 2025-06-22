@@ -27,18 +27,15 @@
       </div>
     </div>
   </header>
-
-  <div class="character-avatar">
-    <img src="https://github.com/sparktacular/Ten-sparkss/blob/main/Kane.jpg?raw=true" alt="Kane"/>
-    <h1>Kane</h1>
-  </div>
  <div class="character-photo">
-  <img src="https://github.com/sparktacular/Ten-sparkss/blob/main/Kane.jpg?raw=true" alt="Kane photo" />
+  <img src="https://github.com/sparktacular/10Sparks-photo/blob/main/chr-up%20Kane.jpg?raw=true" alt="Kane photo" />
 </div>
+<div class="text"> 
+<p>Кейн - зайка пуська гг любит не слушать отца, немного потеряшка, запретите ей гулять по лесам в одиночку. лплаоаплвопалволпоавлпоалпвопапвпоп лвоало ао лав лылдлыа щаада длылада дыыжал  лалалалалав ллалаа аоаалаоп овлапоф </p> 
+</div> 
   </div>
 </body>
 </html>
-
 
 
 * {
@@ -48,7 +45,7 @@
 }
 
 body {
-  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%205.jpg?raw=true') no-repeat center center fixed;
+  background: url('https://github.com/sparktacular/10Sparks-photo/blob/main/bg%203.jpg?raw=true') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Jaini', serif;
   color: #FFACD4;
@@ -103,49 +100,15 @@ header {
   color: white;
   transition: color 0.3s ease;
 }
-
-/* --- Новое оформление для аватара --- */
-
-.character-avatar {
-  display: flex;
-  flex-direction: column;
-  width: min(30vw, 120px);
-  position: fixed;
-  top: 16vh;
-  left: 2vh;
-  z-index: 1000;
-}
-
-.character-avatar img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
-
-.character-avatar h1 {
-  margin-top: 12px;
-  text-align: center;
-  font-size: clamp(14px, 4vw, 18px);
-  color: #FF5AA4;
-}
-
-/* Контейнер для фотографии */
-.character-photo {
-  position: fixed;
-  top: 16vh;
-  height: min(30vw, 120px);
-  left: calc(2vh + min(30vw, 120px) + 16px); /* фиксированный отступ 16px между аватаром и фото */
-  right: 2vh;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
 .character-photo img {
-  height: 100%;
-  width: 100%;
   object-fit: cover;
-  border-radius: 4px;
+    width: 100%;
+   height: 100%;
+  overflow: hidden;
+   margin-top: -30px;
+}
+.text {
+  padding: 16px;
+   word-wrap: break-word;
+   line-height: 1.5;
 }
