@@ -82,15 +82,24 @@ Will you follow it?</p>
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
-h1 {
-  color: #FF5AA4; }
 body {
-  background: url('https://github.com/sparktacular/Ten-sparks-2.0/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
+  background: url('https://github.com/sparktacular/10Sparks-photo/blob/main/bg%201.jpg?raw=true') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Jaini', serif;
   color: #FFACD4;
-  min-height: 100vh;
+   font-size: clamp(14px, 3vw, 16px); /* мин 16 px, адапт максимум 18px */
   overflow-x: hidden; }
+h1, h2 {
+  color: #FF5AA4;
+}
+
+h1 {
+  font-size: clamp(20px, 5.7vw, 30px); 
+}
+
+h2 {
+   font-size: clamp(16px, 4vw, 25px);
+}
 header {
   height: 20vh; }
 .header-container {
@@ -133,13 +142,10 @@ header {
 #rectangle1 {
   aspect-ratio: 2 / 3;
   width: 35%;
-  max-width: 400px;
-  min-width: 200px;
+height: 35%;
   background-color: gray;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat; }
 .right-block {
   display: flex;
@@ -147,12 +153,9 @@ header {
   flex: 1;
   gap: 16px; }
 .text-container {
-  font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
   overflow-wrap: break-word; }
-.tags p {
-  margin-bottom: 8px; }
 .image-row {
   display: flex;
   justify-content: space-between;
@@ -171,12 +174,6 @@ header {
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4); }
-.caption h2 {
-  margin: 6px 0 0 0;
-  font-size: 18px;
-  color: #FF5AA4; }
-.caption p {
-  margin: 4px 0 0 0; }
 @media (max-width: 540px) {
   .image-row {
     flex-direction: column;
