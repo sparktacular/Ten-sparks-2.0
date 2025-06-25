@@ -109,17 +109,20 @@ body {
 
 h1, h2 {
   color: #FF5AA4;
-  text-align: center;
 }
 
 h1 {
   font-size: clamp(25px, 5.7vw, 30px);
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 h2 {
   font-size: clamp(20px, 4vw, 25px);
+  text-align: center;
 }
 
+/* Header Styles */
 header {
   height: 20vh;
   position: relative;
@@ -242,52 +245,74 @@ header {
   background-color: rgba(255, 90, 164, 0.1);
 }
 
+/* Main Content Styles - Ключевая часть */
 .main-content {
+  padding: 20px;
   display: flex;
-  gap: 16px;
-  padding: 16px;
-  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 #rectangle1 {
-  width: clamp(100px, 35%, 200px);
-  aspect-ratio: 2 / 3;
+  width: 200px;
+  min-width: 150px;
+  aspect-ratio: 2/3;
   background-color: gray;
   border-radius: 8px;
+  flex-shrink: 0;
 }
 
-.right-block {
+.text-content {
   flex: 1;
   min-width: 200px;
+  padding-top: 10px;
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .image-row {
   display: flex;
   justify-content: center;
-  padding: 32px 3%;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .image-card {
-  flex: 0 1 calc(33.333% - 24px);
-  max-width: 350px;
+  flex: 0 1 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 24px;
 }
 
 .image-card img {
   width: 100%;
   height: auto;
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 2/3;
   border-radius: 8px;
   object-fit: cover;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
+.caption {
+  padding: 10px 0;
+}
+
+.caption h2 {
+  margin-bottom: 8px;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .left-section, .right-section {
     display: none;
@@ -297,25 +322,50 @@ header {
     display: flex;
   }
   
-  .header-link {
-    font-size: 16px;
-  }
-  
-  .image-card {
-    flex: 0 1 calc(50% - 24px);
-  }
-  
   .logo-container {
     left: 20px;
     transform: none;
     max-width: calc(100% - 70px);
   }
+  
+  /* Основные корректировки для контента */
+  .content-wrapper {
+    gap: 15px;
+  }
+  
+  #rectangle1 {
+    width: 150px;
+    min-width: 120px;
+  }
 }
 
-@media (max-width: 540px) {
-  .image-card {
-    flex: 0 1 100%;
-    max-width: 300px;
+@media (max-width: 480px) {
+  .content-wrapper {
+    gap: 10px;
+  }
+  
+  #rectangle1 {
+    width: 120px;
+    min-width: 100px;
+  }
+  
+  .text-content {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  #rectangle1 {
+    width: 100px;
+    min-width: 80px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  .text-content p {
+    font-size: 14px;
   }
 }
 
