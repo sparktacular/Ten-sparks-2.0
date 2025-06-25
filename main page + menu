@@ -204,12 +204,12 @@ header {
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.96);
+  background-color: rgba(0, 0, 0, 0.8);
   position: absolute;
-  top: 100%;
-  right: 0;
-  padding: 10px;
-  border-radius: 10px;
+  top: 100%; /* Убираем -10px, чтобы меню прилегало к хедеру */
+  right: 0; /* Прижимаем к правому краю */
+  padding: 10px 0; /* Оставляем отступы только сверху и снизу */
+  border-radius: 0 0 0 16px; /* Скругляем только левые нижние углы */
   z-index: 1000;
   width: fit-content;
   max-width: 85vw;
@@ -235,16 +235,17 @@ header {
 .mobile-link {
   color: #FFACD4;
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 8px 20px; /* Увеличиваем горизонтальные отступы */
   font-size: 14px;
   transition: all 0.3s ease;
+  border-radius: 6px; /* Убираем скругление у пунктов */
+  margin: 0; /* Убираем отступы между пунктами */
 }
 
 .mobile-link:hover, .mobile-link.active {
   color: #FF5AA4;
   background-color: rgba(255, 90, 164, 0.1);
 }
-
 /* Main Content Styles - Ключевая часть */
 .main-content {
   padding: 20px;
