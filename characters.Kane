@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Characters</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ten Sparks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="header-container">
       <div class="left-section">
         <a href="#" class="header-link">Homepage</a>
-        <a href="#" class="header-link">Social Media</a>
+        <a href="https://www.tiktok.com/@10sparks3?_t=ZS-8xTJDwQ1hHc&_r=1" class="header-link" target="_blank" rel="noopener noreferrer">Social Media</a>
         <a href="#" class="header-link">Pleides</a>
       </div>
+
       <div class="logo-container">
         <a href="#" id="logo-link">
-          <img id="logo" src="https://github.com/sparktacular/Ten-sparks-2.0/blob/main/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B1%D0%B5%D0%BB%D0%B0%D1%8F.png?raw=true" alt="Logo"/>
+          <img id="logo" src="https://github.com/sparktacular/Ten-sparks-2.0/blob/main/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B1%D0%B5%D0%BB%D0%B0%D1%8F.png?raw=true" alt="Logo">
         </a>
       </div>
       <div class="right-section">
@@ -25,17 +26,39 @@
         <a href="#" class="header-link">Read</a>
         <a href="#" class="header-link">About Book</a>
       </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#" class="mobile-link">Homepage</a>
+      <a href="https://www.tiktok.com/@10sparks3?_t=ZS-8xTJDwQ1hHc&_r=1" class="mobile-link" target="_blank" rel="noopener noreferrer">Social Media</a>
+        <a href="#" class="mobile-link">Pleides</a>
+        <a href="#" class="mobile-link">Lore</a>
+        <a href="#" class="mobile-link">Read</a>
+        <a href="#" class="mobile-link">About Book</a>
+      </div>
     </div>
   </header>
- <div class="character-photo">
-  <img src="https://github.com/sparktacular/10Sparks-photo/blob/main/chr-up%20Kane.jpg?raw=true" alt="Kane photo" />
-</div>
-<div class="text"> 
-<p>Кейн - зайка пуська гг любит не слушать отца, немного потеряшка, запретите ей гулять по лесам в одиночку. лплаоаплвопалволпоавлпоалпвопапвпоп лвоало ао лав лылдлыа щаада длылада дыыжал  лалалалалав ллалаа аоаалаоп овлапоф </p> 
-</div> 
+  <div class="main-content">
+
+    <div class="content-wrapper">
+      <div class="text-container">
+       
+      </div>
+    </div>
   </div>
+  <section>
+    
+  <script src="script.js"></script>
+  <div style="height: 120px;"></div> 
 </body>
 </html>
+
+
 
 
 * {
@@ -49,27 +72,44 @@ body {
   background-size: cover;
   font-family: 'Jaini', serif;
   color: #FFACD4;
+  font-size: clamp(14px, 3vw, 16px);
   overflow-x: hidden;
 }
 
+h1, h2 {
+  color: #FF5AA4;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(25px, 5.7vw, 30px);
+}
+
+h2 {
+  font-size: clamp(20px, 4vw, 25px);
+}
+
+/* Header Styles */
 header {
-  height: 20vh;
+  height: 18vh;
+  position: relative;
 }
 
 .header-container {
   display: flex;
   align-items: center;
-  padding: 16px;
+  padding: 10px 16px;
   background-color: rgba(0, 0, 0, 0.8);
-  height: 70%;
+  height: 80%;
   width: 100%;
+  position: relative;
 }
 
-.left-section,
-.right-section {
+.left-section, .right-section {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex: 1;
 }
 
 .left-section {
@@ -80,35 +120,191 @@ header {
   justify-content: flex-end;
 }
 
-.logo-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-container img {
-  width: 15vw;
-  height: 20vh;
-  object-fit: contain;
-  cursor: pointer;
-}
-
 .header-link {
-  font-size: 1.8vw;
+  font-size: min(1.8vw, 18px);
   text-decoration: none;
   color: white;
   transition: color 0.3s ease;
 }
-.character-photo img {
-  object-fit: cover;
-    width: 100%;
-   height: 100%;
-  overflow: hidden;
-   margin-top: -30px;
+
+.header-link:hover {
+  color: #FF5AA4;
 }
-.text {
-  padding: 16px;
-   word-wrap: break-word;
-   line-height: 1.5;
+
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  max-width: 60%;
 }
+
+.logo-container img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 100%; /* Убираем -10px, чтобы меню прилегало к хедеру */
+  right: 0; /* Прижимаем к правому краю */
+  padding: 10px 0; /* Оставляем отступы только сверху и снизу */
+  border-radius: 0 0 0 16px; /* Скругляем только левые нижние углы */
+  z-index: 1000;
+  width: fit-content;
+  max-width: 85vw;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-link {
+  color: #FFACD4;
+  text-decoration: none;
+  padding: 8px 20px; /* Увеличиваем горизонтальные отступы */
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border-radius: 6px; /* Убираем скругление у пунктов */
+  margin: 0; /* Убираем отступы между пунктами */
+}
+
+.mobile-link:hover, .mobile-link.active {
+  color: #FF5AA4;
+  background-color: rgba(255, 90, 164, 0.1);
+}
+/* Main Content Styles - Ключевая часть */
+.main-content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.text-content {
+  flex: 1;
+  min-width: 200px;
+  padding-top: 10px;
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .left-section, .right-section {
+    display: none;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .logo-container {
+    left: 20px;
+    transform: none;
+    max-width: calc(100% - 70px);
+  }
+  
+  /* Основные корректировки для контента */
+  .content-wrapper {
+    gap: 15px;
+  }
+  
+@media (max-width: 480px) {
+  .content-wrapper {
+    gap: 10px;
+  }
+  .text-content {
+    min-width: 0;
+  }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  const toggleMenu = () => {
+    menuToggle.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  };
+  
+  const closeMenu = () => {
+    menuToggle.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  };
+  
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+  
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  });
+  
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+      closeMenu();
+    });
+  });
+});
