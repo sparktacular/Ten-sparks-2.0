@@ -91,7 +91,6 @@
 
 
 
-/* Добавьте эти стили в ваш файл styles.css */
 
 * {
   margin: 0;
@@ -314,21 +313,27 @@ section {
 
 .top-images {
   display: flex;
+  align-items: stretch;
   gap: 10px;
-  margin-bottom: 15px;
-  align-items: center;
+  margin-top: -30px; /* подтянуть к хедеру */
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.avatar,
+.stretched-image {
+  height: 90px;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 90px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  margin-right: 5px;
 }
 
-.avatar img {
+.avatar img,
+.stretched-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -336,19 +341,16 @@ section {
 
 .stretched-image {
   flex-grow: 1;
-  height: 80px;
   overflow: hidden;
 }
 
-.stretched-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
+/* Карусель точно под stretched-image */
 .bottom-images {
+  padding: 0 10px;
+  margin-top: 0;
   width: 100%;
-  padding: 0 5px;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .carousel-container {
@@ -358,12 +360,13 @@ section {
 }
 
 .carousel {
-  width: 100%;
+  display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0 30px;
+  gap: 10px;
+  padding: 5px 35px; /* отступы под стрелки */
 }
 
 .carousel::-webkit-scrollbar {
@@ -372,16 +375,15 @@ section {
 
 .carousel-inner {
   display: flex;
-  gap: 8px;
-  padding: 5px 0;
+  gap: 10px;
+  width: max-content;
 }
 
 .carousel-item {
-  flex: 0 0 calc(33.333% - 6px);
-  height: 100px;
+  flex: 0 0 calc((100% - 20px) / 3); /* 3 квадрата в строку */
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 5px;
-  min-width: 0;
+  border-radius: 6px;
 }
 
 .carousel-item img {
@@ -406,8 +408,53 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
 }
+
+.carousel-control.prev {
+  left: 5px;
+}
+
+.carousel-control.next {
+  right: 5px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .stretched-image {
+    height: 60px;
+  }
+
+  .carousel-item {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stretched-image {
+    height: 50px;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+
+  .carousel-control {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
 
 .carousel-control.prev {
   left: 0;
@@ -454,6 +501,7 @@ section {
     font-size: 14px;
   }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
