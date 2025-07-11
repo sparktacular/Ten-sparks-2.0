@@ -1,65 +1,97 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ten Sparks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div class="header-container">
-      <div class="left-section">
-        <a href="#" class="header-link">Homepage</a>
-        <a href="https://www.tiktok.com/@10sparks3?_t=ZS-8xTJDwQ1hHc&_r=1" class="header-link" target="_blank" rel="noopener noreferrer">Social Media</a>
-        <a href="#" class="header-link">Pleides</a>
-      </div>
-
-      <div class="logo-container">
-        <a href="#" id="logo-link">
-          <img id="logo" src="https://github.com/sparktacular/Ten-sparks-2.0/blob/main/%D0%BD%D0%B0%D0%B4%D0%BF%D0%B8%D1%81%D1%8C%20%D0%B1%D0%B5%D0%BB%D0%B0%D1%8F.png?raw=true" alt="Logo">
-        </a>
-      </div>
-
-      <div class="right-section">
-        <a href="#" class="header-link">Lore</a>
-        <a href="#" class="header-link">Read</a>
-        <a href="#" class="header-link">About Book</a>
-      </div>
-
-      <div class="menu-toggle" id="menuToggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="#" class="mobile-link">Homepage</a>
-        <a href="https://www.tiktok.com/@10sparks3?_t=ZS-8xTJDwQ1hHc&_r=1" class="mobile-link" target="_blank" rel="noopener noreferrer">Social Media</a>
-        <a href="#" class="mobile-link">Pleides</a>
-        <a href="#" class="mobile-link">Lore</a>
-        <a href="#" class="mobile-link">Read</a>
-        <a href="#" class="mobile-link">About Book</a>
-      </div>
-    </div>
-  </header>
-
-  <img src="https://github.com/sparktacular/10Sparks-photo/blob/main/Kane.jpg?raw=true" class="avatar" alt="Avatar">
-
-  <section>
-    <div style="height: 120px;"></div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-
-
-
-* {
+   .avatar-carousel-wrapper {
+      padding: 15px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    
+    .avatar-carousel-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      max-width: 100%;
+    }
+    
+    /* Аватар */
+    .avatar {
+      --size: 120px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    
+    /* Карусель */
+    .carousel-container {
+      position: relative;
+      flex-grow: 1;
+    }
+    
+    .carousel {
+      display: flex;
+      overflow: hidden;
+    }
+    
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-item {
+      flex: 0 0 33.333%;
+      padding: 0 5px;
+    }
+    
+    .square-img {
+      --size: 150px;
+      width: var(--size);
+      height: var(--size);
+      object-fit: cover;
+      border-radius: 5px;
+      display: block;
+    }
+    
+    /* Управление каруселью */
+    .carousel-control {
+      position: absolute;
+      top: calc(50% - 15px);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    
+    .carousel-control.prev {
+      left: 0;
+    }
+    
+    .carousel-control.next {
+      right: 0;
+    }
+    
+    /* Адаптация */
+    @media (max-width: 768px) {
+      .avatar { --size: 100px; }
+      .square-img { --size: 130px; }
+    }
+    
+    @media (max-width: 600px) {
+      .avatar { --size: 80px; }
+      .square-img { --size: 110px; }
+      .carousel-control { width: 25px; height: 25px; }
+    }
+    
+    @media (max-width: 480px) {
+      .avatar { --size: 60px; }
+      .square-img { --size: 90px; }
+    } * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -231,26 +263,152 @@ header {
   } }
 
 
+ 
+ 
+/* Avatar and Carousel Styles */
+/* Avatar and Carousel Styles */
+.avatar-carousel-wrapper {
+  padding: 15px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.avatar-carousel-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  max-width: 100%;
+}
+
 .avatar {
   border-radius: 50%;
-  width: 100px;
-  height: auto;
-  margin-left: 16px;
-  background: red; /* чтобы было видно */
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-container {
+  position: relative;
+  width: calc(100% - 135px);
+  overflow: hidden;
+  flex-grow: 1;
+  align-self: flex-start;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 33.333%;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 150px; /* Увеличиваем высоту квадратов */
+  object-fit: cover;
+  border-radius: 5px;
+  aspect-ratio: 1/1;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 75px; /* Центрируем по новой высоте */
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
+}
+
+.carousel-control i {
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
   .avatar {
-    min-width: 50px;
-    width: 50px; /* чтобы точно увидеть изменение */
-    background: blue; /* цвет меняется при срабатывании */
+    width: 100px;
+    height: 100px;
+  }
+  
+  .carousel-container {
+    width: calc(100% - 115px);
+  }
+  
+  .carousel-item img {
+    height: 130px; /* Больше чем аватар */
+  }
+  
+  .carousel-control {
+    top: 65px;
   }
 }
 
+@media (max-width: 600px) {
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .carousel-container {
+    width: calc(100% - 95px);
+  }
+  
+  .carousel-item img {
+    height: 110px;
+  }
+  
+  .carousel-control {
+    top: 55px;
+    width: 25px;
+    height: 25px;
+  }
+}
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
+@media (max-width: 480px) {
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .carousel-container {
+    width: calc(100% - 75px);
+  }
+  
+  .carousel-item img {
+    height: 90px;
+  }
+  
+  .carousel-control {
+    top: 45px;
+  }
+}  document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -283,4 +441,39 @@ document.addEventListener('DOMContentLoaded', () => {
       closeMenu();
     });
   });
+});
+
+
+// Carousel functionality
+document.addEventListener('DOMContentLoaded', () => {
+  // Existing menu toggle code...
+  
+  // Carousel
+  const carouselInner = document.querySelector('.carousel-inner');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const prevBtn = document.querySelector('.carousel-control.prev');
+  const nextBtn = document.querySelector('.carousel-control.next');
+  
+  let currentIndex = 0;
+  const itemCount = carouselItems.length;
+  const visibleItems = 3;
+  
+  function updateCarousel() {
+    const itemWidth = 100 / visibleItems;
+    const offset = -currentIndex * itemWidth;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+  }
+  
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + itemCount) % (itemCount - visibleItems + 1);
+    updateCarousel();
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % (itemCount - visibleItems + 1);
+    updateCarousel();
+  });
+  
+  // Initialize carousel
+  updateCarousel();
 });
