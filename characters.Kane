@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Ten Sparks</title>
   <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xXxXx..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -313,29 +314,28 @@ header {
   }
 }
 
-/* === Кнопки управления каруселью === */
 .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
+  background: none;
+  color: #FF5AA4; /* постоянный розовый цвет */
   border: none;
-  width: 36px;
-  height: 36px;
-  font-size: 18px;
-  border-radius: 50%;
+  font-size: 32px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10; /* Поверх изображений */
+  z-index: 10;
   user-select: none;
-  transition: background-color 0.3s ease;
+  padding: 0;
+  width: auto;
+  height: auto;
 }
 
+/* Удаляем :hover, если он есть */
 .carousel-control:hover {
-  background: rgba(255, 90, 164, 0.8);
+  color: #FF5AA4; /* оставляем тот же цвет */
 }
 
 .carousel-control.prev {
@@ -469,14 +469,14 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselInner.appendChild(clone);
   }
 
-  // Получаем ширину одного слайда с учетом gap
   const gap = 16; // из CSS
+
   function getSlideWidth() {
     const item = carouselInner.querySelector('.carousel-item');
     if (!item) return 0;
     const style = window.getComputedStyle(item);
     const width = item.getBoundingClientRect().width;
-    const marginRight = parseInt(style.marginRight) || gap;
+    // marginRight не нужен, так как gap через flex gap
     return width + gap;
   }
 
@@ -492,35 +492,75 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselInner.style.transform = `translateX(${-slideWidth * index}px)`;
   }
 
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex === 0) {
-      currentIndex = carouselItems.length;
+  function checkLoop() {
+    if (currentIndex >= carouselItems.length) {
+      carouselInner.style.transition = 'none';
+      currentIndex = 0;
+      carouselInner.style.transform = `translateX(0)`;
+    } else if (currentIndex < 0) {
+      currentIndex = carouselItems.length - 1;
       carouselInner.style.transition = 'none';
       carouselInner.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          currentIndex--;
-          carouselInner.style.transition = 'transform 0.5s ease';
-          moveToIndex(currentIndex);
-        });
-      });
-    } else {
-      currentIndex--;
-      moveToIndex(currentIndex);
     }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    moveToIndex(currentIndex);
+    setTimeout(checkLoop, 500);
   });
 
   nextBtn.addEventListener('click', () => {
     currentIndex++;
     moveToIndex(currentIndex);
-    if (currentIndex >= carouselItems.length) {
-      setTimeout(() => {
-        carouselInner.style.transition = 'none';
-        currentIndex = 0;
-        carouselInner.style.transform = `translateX(0)`;
-      }, 500);
-    }
+    setTimeout(checkLoop, 500);
   });
+
+  // Добавляем поддержку свайпа
+  let startX = 0;
+  let isDragging = false;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = 0;
+
+  carouselInner.addEventListener('touchstart', touchStart);
+  carouselInner.addEventListener('touchmove', touchMove);
+  carouselInner.addEventListener('touchend', touchEnd);
+
+  function touchStart(event) {
+    startX = event.touches[0].clientX;
+    isDragging = true;
+    carouselInner.style.transition = 'none';
+  }
+
+  function touchMove(event) {
+    if (!isDragging) return;
+    const currentX = event.touches[0].clientX;
+    const diff = currentX - startX;
+
+    carouselInner.style.transform = `translateX(${-slideWidth * currentIndex + diff}px)`;
+  }
+
+  function touchEnd(event) {
+    isDragging = false;
+    const endX = event.changedTouches[0].clientX;
+    const diff = endX - startX;
+
+    // Порог для перелистывания
+    const swipeThreshold = slideWidth / 4;
+
+    if (diff > swipeThreshold) {
+      // Свайп вправо — листаем назад
+      currentIndex--;
+    } else if (diff < -swipeThreshold) {
+      // Свайп влево — листаем вперёд
+      currentIndex++;
+    }
+    carouselInner.style.transition = 'transform 0.5s ease';
+    moveToIndex(currentIndex);
+
+    setTimeout(checkLoop, 500);
+  }
 
   // Инициализация
   moveToIndex(0);
